@@ -15,7 +15,7 @@ Notes:
 
 Every 1000 iterations an image is saved in the working directory with the progress of the algorithm so far. Furthermore, a 'data.txt' file is generated with the DNA of the strongest candidate so far. This data can replace the function call mother=create_mother(n=128) in order to make the algorithm run from that saved evolution instead of starting from scratch again.
 
-Actual allgorithm flow:
+Actual algorithm flow:
 
 1. Initialize mother DNA
 
