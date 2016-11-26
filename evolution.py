@@ -1,7 +1,5 @@
 from PIL import Image, ImageDraw
 from os import listdir,getcwd
-import pygame
-from pygame.locals import *
 from random import *
 import copy
 from math import sqrt
@@ -16,7 +14,6 @@ def get_image():
     dir=getcwd()
     files=listdir(dir)
     # Find images
-    s=None
     for f in files:
         string=''
         for i in range(1,5):
@@ -53,11 +50,11 @@ def create_mother(n=128):
     mother=[]
     for i in range(n):
         circle=[]
-        circle.append(randint(0,242))
-        circle.append(randint(0,162))
-        circle.append(randint(0,70))
-        circle.append([randint(0,255),255])
-        circle.append(randint(30,60))
+        circle.append(randint(0,242))       # center x
+        circle.append(randint(0,162))       # center y
+        circle.append(randint(0,70))        # radius
+        circle.append([randint(0,255),255]) # gray color
+        circle.append(randint(30,60))       # alpha - transparency
         mother.append(circle)
     return mother
 
@@ -109,9 +106,12 @@ def strength(mother_or_daughter,original):
 
 # Get strongest candidate 
 def get_strongest(mother,daughter,original):
+    
     mother_strength=strength(mother,original)
     daughter_strength=strength(daughter,original)
+    
     print min(mother_strength,daughter_strength)
+    
     if mother_strength>daughter_strength:
         return daughter
     else:
