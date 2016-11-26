@@ -5,8 +5,6 @@ import copy
 from math import sqrt
 import ast
 
-
-
 # FUNCTIONS
 
 # Original image openning and info
