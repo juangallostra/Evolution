@@ -19,7 +19,7 @@ Actual algorithm flow:
 
 1. Initialize mother DNA
 
-2. For n_iterations:
+2. For the specified number of iterations:
     - Mutate to obtain 1 offspring
     - Compare mother and daughter strength
     - Keep the one with highest strength as mother
